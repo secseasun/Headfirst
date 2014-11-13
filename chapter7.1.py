@@ -2,8 +2,13 @@
     最终数据类型为字典{名字：运动员类}
     主程序只需要调用函数，输出结果"""
 import glob
+<<<<<<< HEAD
 
 
+=======
+import pickle
+
+>>>>>>> origin/master
 class Athlete(list):                            #运动员类，继承自list
     def __init__(self,name,brith,times=[]):
         list.__init__([])
@@ -42,5 +47,12 @@ all_athlete_data={}
 for each_file in all_files:    #从每个文件中获得名字：成绩的字典
     data=get_sanitize_data(each_file)
     all_athlete_data[data.name]=data
+<<<<<<< HEAD
 for each_data in all_athlete_data:
     print(all_athlete_data[each_data].top3())
+=======
+with open("all_athlete_data.pickle","wb") as data_to_write:
+    pickle.dump(all_athlete_data,data_to_write)
+with open("all_athlete_data.pickle","rb") as data_read:
+    print(pickle.load(data_read))
+>>>>>>> origin/master
